@@ -140,20 +140,20 @@ MONGO_URI ='localhost'#'mongodb://127.0.0.1:27017,127.0.0.1:27018,127.0.0.1:2701
 MONGO_DB = 'music'
 #REPLICASET = 'repset'
 
-# SCHEDULER = "MusicSpider.scrapy_redis.scheduler.Scheduler"
-# SCHEDULER_QUEUE_CLASS = 'MusicSpider.scrapy_redis.queue.SpiderPriorityQueue'
-# SCHEDULER_PERSIST = True
-# # 在redis中保持scrapy-redis用到的各个队列，从而允许暂停和暂停后恢复
-#
-# # 使用scrapy_redis的去重方式
-# # DUPEFILTER_CLASS = "MusicSpider.bloomFilterOnRedis.bloomRedisFilter.bloomRedisFilter"
-# REDIS_HOST = '127.0.0.1'
-# REDIS_PORT = 6379
+SCHEDULER = "MusicSpider.scrapy_redis.scheduler.Scheduler"
+SCHEDULER_QUEUE_CLASS = 'MusicSpider.scrapy_redis.queue.SpiderPriorityQueue'
+SCHEDULER_PERSIST = True
+# 在redis中保持scrapy-redis用到的各个队列，从而允许暂停和暂停后恢复
 
-# 去重队列的信息
-# FILTER_URL = None
-# FILTER_HOST = 'localhost'
-# FILTER_PORT = 6379
-# FILTER_DB = 0
+# 使用scrapy_redis的去重方式
+# DUPEFILTER_CLASS = "MusicSpider.bloomFilterOnRedis.bloomRedisFilter.bloomRedisFilter"
+REDIS_HOST = '127.0.0.1'
+REDIS_PORT = 6379
+
+#去重队列的信息
+FILTER_URL = None
+FILTER_HOST = 'localhost'
+FILTER_PORT = 6379
+FILTER_DB = 0
 
 HTTP_PROXY ='http://127.0.0.1:8118'

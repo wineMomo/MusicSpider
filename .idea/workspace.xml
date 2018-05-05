@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a101de1-c796-459d-8d5d-68bb4aeb004d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicSpider/middlewares/RandomProxy.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicSpider/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/MusicSpider/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicSpider/scrapy_redis/BloomfilterOnRedis.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicSpider/scrapy_redis/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicSpider/scrapy_redis/connection.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicSpider/scrapy_redis/dupefilter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicSpider/scrapy_redis/isExists.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicSpider/scrapy_redis/pipelines.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicSpider/scrapy_redis/queue.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicSpider/scrapy_redis/scheduler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicSpider/scrapy_redis/spiders.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicSpider/scrapy_redis/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicSpider/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MusicSpider/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="2a101de1-c796-459d-8d5d-68bb4aeb004d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,11 +41,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MusicSpider/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="158" column="1" selection-start-line="158" selection-start-column="1" selection-end-line="158" selection-end-column="1" />
+            <state relative-caret-position="312">
+              <caret line="158" selection-start-line="158" selection-end-line="158" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RandomProxy.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MusicSpider/middlewares/RandomProxy.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -111,11 +104,11 @@
         <option value="$PROJECT_DIR$/MusicSpider/items.py" />
         <option value="$PROJECT_DIR$/MusicSpider/middlewares/RandomUserAgent.py" />
         <option value="$PROJECT_DIR$/MusicSpider/middlewares/__init__.py" />
-        <option value="$PROJECT_DIR$/MusicSpider/middlewares/RandomProxy.py" />
         <option value="$PROJECT_DIR$/MusicSpider/spiders/163_com_spider.py" />
         <option value="$PROJECT_DIR$/MusicSpider/middlewares/RandomPeoxy.py" />
         <option value="$PROJECT_DIR$/MusicSpider/pipelines.py" />
         <option value="$PROJECT_DIR$/MusicSpider/settings.py" />
+        <option value="$PROJECT_DIR$/MusicSpider/middlewares/RandomProxy.py" />
       </list>
     </option>
   </component>
@@ -151,18 +144,6 @@
               <item name="MusicSpider" type="b2602c69:ProjectViewProjectNode" />
               <item name="MusicSpider" type="462c0819:PsiDirectoryNode" />
               <item name="MusicSpider" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MusicSpider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MusicSpider" type="462c0819:PsiDirectoryNode" />
-              <item name="MusicSpider" type="462c0819:PsiDirectoryNode" />
-              <item name="middlewares" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MusicSpider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MusicSpider" type="462c0819:PsiDirectoryNode" />
-              <item name="MusicSpider" type="462c0819:PsiDirectoryNode" />
-              <item name="spiders" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MusicSpider" type="b2602c69:ProjectViewProjectNode" />
@@ -239,7 +220,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="-3" width="1317" height="771" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.5140471" side_tool="true" visible="true" weight="0.32896653" />
@@ -247,7 +227,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="right" id="Mongo Explorer" visible="true" weight="0.17995444" />
+      <window_info anchor="right" id="Mongo Explorer" visible="true" weight="0.18526955" />
       <window_info anchor="bottom" id="Terminal" sideWeight="0.4859529" visible="true" weight="0.32896653" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992722" visible="true" weight="0.14654517" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -563,7 +543,6 @@
     <entry file="file://$PROJECT_DIR$/MusicSpider/scrapy_redis/pipelines.py" />
     <entry file="file://$PROJECT_DIR$/MusicSpider/scrapy_redis/scheduler.py" />
     <entry file="file://$PROJECT_DIR$/MusicSpider/scrapy_redis/spiders.py" />
-    <entry file="file://$PROJECT_DIR$/MusicSpider/middlewares/RandomProxy.py" />
     <entry file="file://$PROJECT_DIR$/MusicSpider/middlewares/RandomUserAgent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -608,8 +587,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MusicSpider/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="158" column="1" selection-start-line="158" selection-start-column="1" selection-end-line="158" selection-end-column="1" />
+        <state relative-caret-position="312">
+          <caret line="158" selection-start-line="158" selection-end-line="158" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MusicSpider/middlewares/RandomProxy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
         </state>
       </provider>
     </entry>
