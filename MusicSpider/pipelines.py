@@ -15,26 +15,26 @@ class MusicspiderPipeline(object):
 
 class MongoPipeline(object):
 
-    def __init__(self, mongo_uri, mongo_db, replicaset):
+    def __init__(self, mongo_uri, mongo_db):#, replicaset):
         self.mongo_uri = mongo_uri
         self.mongo_db = mongo_db
-        self.replicaset = replicaset
+        #self.replicaset = replicaset
 
     @classmethod
     def from_crawler(cls, crawler):
         return cls(
             mongo_uri=crawler.settings.get('MONGO_URI'),
-            mongo_db=crawler.settings.get('MONGO_DB', 'music'),
-            replicaset=crawler.settings.get('REPLICASET')
+            mongo_db=crawler.settings.get('MONGO_DB'),
+           # replicaset=crawler.settings.get('REPLICASET')
         )
 
-        def open_spider(self, spider):
-            self.client = pymongo.MongoClient(self.mongo_uri,replicaset=self.replicaset)
-            self.db = self.client[self.mongo_db]
+    def open_spider(self, spider):
+        self.client = pymongo.MongoClient(self.mongo_uri)#, replicaset=self.replicaset)
+        self.db = self.client[self.mongo_db]
 
-        def close_spider(self, spider):
-            self.client.close()
+    def close_spider(self, spider):
+        self.client.close()
 
-        def process_item(self, item, spider):
-            self.db[item.table_name].update({'id': item.get('id')}, {'$set': dict(item)}, True)
-            return item
+    def process_item(self, item, spider):
+        self.db[item.table_name].update({'id': item.get('id')}, {'$set': dict(item)}, True)
+        return item
