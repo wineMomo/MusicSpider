@@ -26,7 +26,7 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 2
+DOWNLOAD_DELAY = 2
 # The download delay setting will honor only one of:
 # CONCURRENT_REQUESTS_PER_DOMAIN = 16
 # CONCURRENT_REQUESTS_PER_IP = 16
@@ -142,11 +142,10 @@ MONGO_DB = 'music'
 
 SCHEDULER = "MusicSpider.scrapy_redis.scheduler.Scheduler"
 SCHEDULER_QUEUE_CLASS = 'MusicSpider.scrapy_redis.queue.SpiderPriorityQueue'
-SCHEDULER_PERSIST = True
 # 在redis中保持scrapy-redis用到的各个队列，从而允许暂停和暂停后恢复
-
+SCHEDULER_PERSIST = True
 # 使用scrapy_redis的去重方式
-# DUPEFILTER_CLASS = "MusicSpider.bloomFilterOnRedis.bloomRedisFilter.bloomRedisFilter"
+DUPEFILTER_CLASS = "MusicSpider.bloomFilterOnRedis.bloomRedisFilter.bloomRedisFilter"
 REDIS_HOST = '127.0.0.1'
 REDIS_PORT = 6379
 

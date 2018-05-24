@@ -17,3 +17,4 @@ class MusicspiderItem(scrapy.Item):
     album = scrapy.Field()
     music = scrapy.Field()
     comments = scrapy.Field()
+    totalCount = scrapy.Field()

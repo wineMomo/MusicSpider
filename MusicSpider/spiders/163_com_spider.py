@@ -25,7 +25,7 @@ class MusicSpider(Spider):
     # 获得所有歌手的url
     def parse_index(self, response):
         for sel in response.xpath(
-                '//*[@id="m-artist-box"]/li/*'):  # 网易云音乐的歌手页有两个组成部分，上方十个带头像的热门歌手和下方只显示姓名的普通歌手，原来的xpath选择器只能得到热门歌手id,现已修改
+                '//*[@id="m-artist-box"]/li/*'):
             artist = sel.re('href\=\"\/artist\?id\=[(0-9)]{4,9}')
             for artistid in artist:
                 artist_url = self.base_url + '/artist' + '/album?' + artistid[14:]
@@ -33,8 +33,8 @@ class MusicSpider(Spider):
 
     def parse_artist_pre(self, response):
         artist_albums = response.xpath(
-            '//*[@class="u-page"]/a[@class="zpgi"]/@href').extract()  # 得到专辑页的翻页html elements列表
-        if artist_albums == []:  # 若为空，说明只有一页，即套用原parse_artist方法的代码，注意callback=self.parse_album
+            '//*[@class="u-page"]/a[@class="zpgi"]/@href').extract()  # 得到专辑页的翻页链接
+        if artist_albums == []:  # 若为空，说明只有一页,获得专辑链接
             albums = response.xpath('//*[@id="m-song-module"]/li/div/a[@class="msk"]/@href').extract()
             for album in albums:
                 album_url = self.base_url + album
@@ -53,6 +53,7 @@ class MusicSpider(Spider):
 
     # 获得所有专辑音乐的url
     def parse_album(self, response):
+        # //span[@class="txt"]/a/href
         musics = response.xpath('//ul[@class="f-hide"]/li/a/@href').extract()
         for music in musics:
             music_id = music[9:]
@@ -91,14 +92,15 @@ class MusicSpider(Spider):
                 hotcomment_author = comment['user']['nickname']
                 hotcomment = comment['content']
                 hotcomment_like = comment['likedCount']
-                hotcomment_avatar = comment['user']['avatarUrl']
                 data = {
                     'nickname': hotcomment_author,
                     'content': hotcomment,
-                    'likedcount': hotcomment_like,
-                    'avatarurl': hotcomment_avatar
+                    'likedcount': hotcomment_like
                 }
                 comments.append(data)
+
+        if 'total' in result.keys():
+            totalCount = result.get('total')
 
         item = MusicspiderItem()
         for field in item.fields:
