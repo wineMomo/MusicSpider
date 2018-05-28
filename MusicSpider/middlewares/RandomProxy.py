@@ -18,4 +18,4 @@ class RandomProxy(object):
         :param spider:
         :return:
         '''
-        request.meta['proxy'] = self.http_proxy  # random.choice(self.http_proxy)
+        request.meta['proxy'] = random.choice(self.http_proxy)  # self.http_proxy  #

@@ -112,7 +112,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'MusicSpider.pipelines.MongoPipeline': 300,
+    'MusicSpider.pipelines.MusicspiderPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -137,9 +137,9 @@ AUTOTHROTTLE_DEBUG = False
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-MONGO_URI = 'localhost'  # 'mongodb://127.0.0.1:27017,127.0.0.1:27018,127.0.0.1:27019'
+MONGO_URI = '127.0.0.1:27017'  # 'mongodb://127.0.0.1:27017,127.0.0.1:27018,127.0.0.1:27019'
 MONGO_DB = 'music'
-# REPLICASET = 'repset'
+#REPLICASET = 'replset'
 
 SCHEDULER = "MusicSpider.scrapy_redis.scheduler.Scheduler"
 SCHEDULER_QUEUE_CLASS = 'MusicSpider.scrapy_redis.queue.SpiderPriorityQueue'
@@ -155,11 +155,12 @@ FILTER_URL = None
 FILTER_HOST = 'localhost'
 FILTER_PORT = 6379
 FILTER_DB = 0
-# HTTP_PROXY = ["120.78.72.22:8080", "39.137.69.7:80",
-#               "101.4.136.34:80", "54.222.177.145:3218",
-#               "118.190.210.227:3218", "120.79.64.64:80",
-#               "120.78.72.22:8080", "39.137.47.119:8080",
-#               "101.6.53.133:1080", "119.57.108.89:53281",
-#               "114.249.119.42:9000", "114.249.118.215:9000",
-#               "39.137.69.8:80", "124.207.178.174:9090",
-#               "39.137.69.9:80", "39.137.77.68:80"]
+
+HTTP_PROXY = ["120.78.72.22:8080", "39.137.69.7:80",
+              "101.4.136.34:80", "54.222.177.145:3218",
+              "118.190.210.227:3218", "120.79.64.64:80",
+              "120.78.72.22:8080", "39.137.47.119:8080",
+              "101.6.53.133:1080", "119.57.108.89:53281",
+              "114.249.119.42:9000", "114.249.118.215:9000",
+              "39.137.69.8:80", "124.207.178.174:9090",
+              "39.137.69.9:80", "39.137.77.68:80"]
