@@ -28,8 +28,8 @@ ROBOTSTXT_OBEY = True
 # See also autothrottle settings and docs
 DOWNLOAD_DELAY = 2
 # The download delay setting will honor only one of:
-# CONCURRENT_REQUESTS_PER_DOMAIN = 16
-# CONCURRENT_REQUESTS_PER_IP = 16
+CONCURRENT_REQUESTS_PER_DOMAIN = 8
+CONCURRENT_REQUESTS_PER_IP = 8
 
 # Disable cookies (enabled by default)
 # COOKIES_ENABLED = False
@@ -99,6 +99,8 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
     'MusicSpider.middlewares.RandomUserAgent.RandomUserAgent': 410,
     # 'MusicSpider.middlewares.MusicspiderDownloaderMiddleware': 543,
+    # 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,
+    # 'MusicSpider.middlewares.RandomProxy.RandomProxy': 700,
 }
 
 # Enable or disable extensions
@@ -115,18 +117,17 @@ ITEM_PIPELINES = {
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
-####什么意思
-#AUTOTHROTTLE_ENABLED = True
+
+AUTOTHROTTLE_ENABLED = True
 # The initial download delay
-#########什么意思
-#AUTOTHROTTLE_START_DELAY = 5
+AUTOTHROTTLE_START_DELAY = 5
 # The maximum download delay to be set in case of high latencies
-#AUTOTHROTTLE_MAX_DELAY = 60
+AUTOTHROTTLE_MAX_DELAY = 60
 # The average number of requests Scrapy should be sending in parallel to
 # each remote server
 # AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
 # Enable showing throttling stats for every response received:
-# AUTOTHROTTLE_DEBUG = False
+AUTOTHROTTLE_DEBUG = False
 
 # Enable and configure HTTP caching (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
@@ -136,9 +137,9 @@ ITEM_PIPELINES = {
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-MONGO_URI ='localhost'#'mongodb://127.0.0.1:27017,127.0.0.1:27018,127.0.0.1:27019'
+MONGO_URI = 'localhost'  # 'mongodb://127.0.0.1:27017,127.0.0.1:27018,127.0.0.1:27019'
 MONGO_DB = 'music'
-#REPLICASET = 'repset'
+# REPLICASET = 'repset'
 
 SCHEDULER = "MusicSpider.scrapy_redis.scheduler.Scheduler"
 SCHEDULER_QUEUE_CLASS = 'MusicSpider.scrapy_redis.queue.SpiderPriorityQueue'
@@ -149,10 +150,16 @@ DUPEFILTER_CLASS = "MusicSpider.bloomFilterOnRedis.bloomRedisFilter.bloomRedisFi
 REDIS_HOST = '127.0.0.1'
 REDIS_PORT = 6379
 
-#去重队列的信息
+# 去重队列的信息
 FILTER_URL = None
 FILTER_HOST = 'localhost'
 FILTER_PORT = 6379
 FILTER_DB = 0
-
-HTTP_PROXY ='http://127.0.0.1:8118'
+# HTTP_PROXY = ["120.78.72.22:8080", "39.137.69.7:80",
+#               "101.4.136.34:80", "54.222.177.145:3218",
+#               "118.190.210.227:3218", "120.79.64.64:80",
+#               "120.78.72.22:8080", "39.137.47.119:8080",
+#               "101.6.53.133:1080", "119.57.108.89:53281",
+#               "114.249.119.42:9000", "114.249.118.215:9000",
+#               "39.137.69.8:80", "124.207.178.174:9090",
+#               "39.137.69.9:80", "39.137.77.68:80"]
